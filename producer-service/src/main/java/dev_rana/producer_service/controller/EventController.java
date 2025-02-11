@@ -36,4 +36,10 @@ public class EventController {
             return ResponseEntity.ok(e.getMessage());
         }
     }
+
+    @GetMapping("/send-to-partitions")
+    public ResponseEntity<?> sendToPartitions() {
+        kafkaMessagePublisher.sendMessageTOPartition();
+        return ResponseEntity.ok("Message send successfully");
+    }
 }

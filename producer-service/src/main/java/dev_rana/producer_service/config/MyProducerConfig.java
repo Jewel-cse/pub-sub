@@ -25,6 +25,10 @@ public class MyProducerConfig {
     public NewTopic serializeDeserializeTopic() {
         return new NewTopic("object-send-topic", 3, (short) 1);
     }
+    @Bean
+    public NewTopic topicForSpecificPartition() {
+        return new NewTopic("topic_specific_partition", 4, (short) 1);
+    }
 
 
     @Bean
